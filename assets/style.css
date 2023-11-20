@@ -53,9 +53,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body {
+/* body {
 
-}
+} */
 section {
 	margin-block: 6em;
 }
@@ -121,13 +121,24 @@ header {
 	object-fit: cover;
 	object-position: center;
 }
+
+#carrousel{
+	display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    top: 70px;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+}
+
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des fleches du carrousel */
 #banner .arrow {
 	position: absolute;
 }
 #banner .arrow_left {
-	left: 10px;
+	left: 20px;
 }
 #banner .arrow_right {
 	right: 10px;

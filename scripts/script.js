@@ -15,15 +15,14 @@ const slides = [
 		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
-]
+];
 
 let position = 0; 
-const listSlide = slides.length;
+let listSlides = slides.length;
 
-
-
-
-
+ContainCarrousel (position);
+AddDots();
+dotSelected ();
 
 // Création des variables pour flèches gauche et droite du carrousel
 
@@ -46,19 +45,50 @@ flecheGaucheCarrousel.addEventListener("click", (event) => {
 
 // création de la variable 
 
-let dot = document.querySelector(".dots");
+function AddDots () { 
 
-for (let index = 0 ; index < slides.length; index++){
-	// création des dots pour chaque slides
-let dot = document.createElement("div"); 
-dot.setAttribute ("class", "dot");
-DOMStringList.appenchild(dot);
+	let dots = document.querySelector(".dots");
+	
+	for (let index = 0 ; index < listSlides.length; index++){
+		// création des dots pour chaque slides
+		const dot = document.createElement("div"); 
+		let dots = document.querySelector(".dots")
+		dot.setAttribute ("class", "dot");
+		dots.appenchild(dot);
+		console.log( dot.length)
+	}
+}
+console.log (dot)
 
+// localisation dots
+
+function dotSelected () {
+
+	const listDots = document.querySelector('.dot');
+	for (let index = 0 ; index < listDots.length; index++){
+		const dot = listDots (index);
+		if (index === position){
+			dot.classList.add ("dot_selected");
+		}
+	else {
+		dot.classList.remove ("dot_selected")
+	}
+	}
 }
 
+// création du contenu navigation dans carrousel
 
+function ContainCarrousel (position){
+	const element = listSlides(position); 
+	console.log(element);
+	const img = document.querySelector(".banner-img");
+	img.setAttribute("src" , "./assets/images/slideshow/"+ element.image);
 
+	const taglines = document.querySelector(".banner-txt");
+	taglines.innerHTML= element.tagLine;
 
+dotSelected();
+}
 
 
 

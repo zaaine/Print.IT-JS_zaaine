@@ -138,10 +138,13 @@ header {
 	position: absolute;
 }
 #banner .arrow_left {
-	left: 20px;
+	left: 10px;
+	cursor: pointer;
+	
 }
 #banner .arrow_right {
 	right: 10px;
+	cursor: pointer;
 }
 /* Gestion des points du carrousel */
 .dots {
